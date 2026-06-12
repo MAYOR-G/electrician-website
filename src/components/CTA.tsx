@@ -14,9 +14,8 @@ export function CTA() {
               Need safe electrical work? Get a clear visit window and estimate.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/70">
-              Use this CTA for a contact form, scheduling widget, emergency call
-              workflow, or estimate request when adapting the template for a
-              real electrical company.
+              Speak with the service team, confirm the best visit window, and
+              get a clear estimate before repair or installation work begins.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="tel:+13125550119" variant="yellow">

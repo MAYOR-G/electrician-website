@@ -3,8 +3,8 @@ import { brand, emergencyHighlights } from "../data/siteContent";
 
 export function EmergencyBanner() {
   return (
-    <section className="bg-safety px-5 py-4 text-navy lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+    <section className="bg-safety px-5 py-5 text-navy lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex items-start gap-3">
           <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-navy text-safety">
             <Siren className="h-5 w-5" aria-hidden="true" />
@@ -13,9 +13,16 @@ export function EmergencyBanner() {
             <p className="font-display text-xl font-extrabold tracking-[-0.04em]">
               Urgent electrical issue? Get a licensed technician on the line.
             </p>
-            <p className="mt-1 text-sm font-bold text-navy/70">
-              {emergencyHighlights.join(" • ")}
-            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {emergencyHighlights.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-navy/12 bg-white/35 px-3 py-1 text-xs font-black uppercase tracking-[0.1em] text-navy/72"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         <a

@@ -11,15 +11,12 @@ import {
   Mail,
   MapPin,
   Phone,
-  PlugZap,
   ShieldCheck,
   Siren,
   Smartphone,
   Sparkles,
-  Star,
   TimerReset,
   Wrench,
-  Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -36,6 +33,18 @@ export type Service = {
 };
 
 export type TrustPoint = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+export type CredentialBadge = {
+  label: string;
+  value: string;
+  icon: LucideIcon;
+};
+
+export type ProjectSignal = {
   title: string;
   description: string;
   icon: LucideIcon;
@@ -65,7 +74,7 @@ export type Testimonial = {
 
 export const brand = {
   name: "VoltEdge Electrical",
-  tagline: "Licensed electrical work, fast response, and safety-first service for homes and businesses.",
+  tagline: "Precision electrical service, emergency response, and safety-led upgrades for homes and businesses.",
   phone: "+1 312 555 0167",
   emergencyPhone: "+1 312 555 0119",
   email: "service@voltedgeelectrical.com",
@@ -85,7 +94,8 @@ export const navLinks: NavLink[] = [
 
 export const heroStats = [
   { value: "24/7", label: "emergency support" },
-  { value: "4.9", label: "average rating" },
+  { value: "Licensed", label: "technicians" },
+  { value: "60 min", label: "response windows" },
   { value: "10k+", label: "jobs completed" },
 ];
 
@@ -96,25 +106,69 @@ export const emergencyHighlights = [
   "Clear estimates before work starts",
 ];
 
+export const credentialBadges: CredentialBadge[] = [
+  {
+    label: "Licensed and insured",
+    value: "Documented work",
+    icon: BadgeCheck,
+  },
+  {
+    label: "24/7 support",
+    value: "Emergency triage",
+    icon: Clock3,
+  },
+  {
+    label: "Safety-first visits",
+    value: "Tested before handoff",
+    icon: ShieldCheck,
+  },
+  {
+    label: "Clear pricing",
+    value: "Quote before repair",
+    icon: ClipboardCheck,
+  },
+];
+
+export const projectSignals: ProjectSignal[] = [
+  {
+    title: "Residential callouts",
+    description:
+      "A clear route for homeowners who need fast help with outlets, panels, breakers, fixtures, or unsafe faults.",
+    icon: Home,
+  },
+  {
+    title: "Commercial maintenance",
+    description:
+      "Confident service framing for offices, restaurants, retail units, property managers, and light commercial spaces.",
+    icon: Building2,
+  },
+  {
+    title: "Upgrade planning",
+    description:
+      "Room for EV circuits, smart-home wiring, lighting redesigns, panel upgrades, and future-ready load checks.",
+    icon: BatteryCharging,
+  },
+];
+
 export const services: Service[] = [
   {
     title: "Residential Electrical",
     description:
-      "Repairs, outlet upgrades, breaker troubleshooting, appliance circuits, and code-safe home improvements.",
+      "Fault finding, outlet upgrades, breaker troubleshooting, appliance circuits, and tidy home improvements.",
     icon: Home,
     tag: "Homes",
   },
   {
     title: "Commercial Electrical",
     description:
-      "Reliable electrical support for offices, retail spaces, hospitality venues, and light commercial properties.",
+      "Planned and reactive electrical support for offices, retail spaces, hospitality venues, and managed units.",
     icon: Building2,
     tag: "Business",
   },
   {
     title: "Emergency Repairs",
     description:
-      "Fast response for outages, tripped breakers, burning smells, faulty panels, and unsafe wiring concerns.",
+      "Urgent support for outages, tripped breakers, burning smells, faulty panels, and unsafe wiring concerns.",
     icon: Siren,
     tag: "24/7",
   },
@@ -128,7 +182,7 @@ export const services: Service[] = [
   {
     title: "Electrical Inspections",
     description:
-      "Safety checks, buyer inspections, landlord certificates, panel reviews, and repair recommendations.",
+      "Safety checks, buyer inspections, landlord-ready reports, panel reviews, and repair recommendations.",
     icon: ClipboardCheck,
     tag: "Safety",
   },
@@ -145,19 +199,19 @@ export const trustPoints: TrustPoint[] = [
   {
     title: "Licensed technicians",
     description:
-      "Every visit is handled by trained electrical professionals who work to modern safety standards.",
+      "Every visit is handled by qualified electrical professionals working to modern safety standards.",
     icon: BadgeCheck,
   },
   {
     title: "Fast response windows",
     description:
-      "Emergency jobs are triaged quickly, with clear arrival windows and updates from dispatch.",
+      "Emergency jobs are triaged quickly with clear arrival windows and practical dispatch updates.",
     icon: TimerReset,
   },
   {
     title: "Transparent pricing",
     description:
-      "You get a clear estimate before work begins, with options explained in plain language.",
+      "Customers get a clear estimate before work begins, with options explained in plain language.",
     icon: CheckCircle2,
   },
   {
@@ -172,7 +226,7 @@ export const processSteps: ProcessStep[] = [
   {
     title: "Request a visit",
     description:
-      "Call, email, or request an appointment with your issue, preferred time, and property type.",
+      "Call, email, or request an appointment with the issue, preferred time, and property type.",
     icon: CalendarCheck,
   },
   {
@@ -184,7 +238,7 @@ export const processSteps: ProcessStep[] = [
   {
     title: "Clear quote",
     description:
-      "You receive a practical repair or installation estimate before approving the work.",
+      "The customer receives a practical repair or installation estimate before approving the work.",
     icon: Sparkles,
   },
   {
@@ -291,11 +345,4 @@ export const footerLinks = [
   { label: "Emergency repairs", href: "#services" },
   { label: "Pricing estimates", href: "#pricing" },
   { label: "Book inspection", href: "#contact" },
-];
-
-export const visualMetrics = [
-  { label: "Response window", value: "< 60 min", icon: Zap },
-  { label: "Safety tested", value: "100%", icon: ShieldCheck },
-  { label: "EV ready circuits", value: "Available", icon: BatteryCharging },
-  { label: "Smart upgrades", value: "Planned", icon: PlugZap },
 ];
